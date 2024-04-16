@@ -36,22 +36,27 @@ const actualizarVista = () => {
     })
 }
 
-const query = new XMLHttpRequest();
-query.open('GET', '/michis.json', true);
-query.send();
 
-query.onreadystatechange = function () {
-    if(query.readyState == 4) {
-        if(query.status == 200) {
-            console.log("llegó");
-            const respuesta = JSON.parse(query.responseText);
-            actualizarLista(respuesta.lista);
-            actualizarVista();
-            console.log(listaMichis)
-        } else if(query.status == 404){
-            console.error("Recurso no encontrado");
-        } else {
-            console.error("pasó otra cosa");
+const actualizarDatosConAjax = () => {
+    const query = new XMLHttpRequest();
+    query.open('GET', '/michis.json', true);
+    query.send();
+    
+    query.onreadystatechange = function () {
+        if(query.readyState == 4) {
+            if(query.status == 200) {
+                console.log("llegó");
+                const respuesta = JSON.parse(query.responseText);
+                actualizarLista(respuesta.lista);
+                actualizarVista();
+                console.log(listaMichis)
+            } else if(query.status == 404){
+                console.error("Recurso no encontrado");
+            } else {
+                console.error("pasó otra cosa");
+            }
         }
     }
 }
+
+actualizarDatosConAjax();
