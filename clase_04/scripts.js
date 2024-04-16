@@ -7,6 +7,8 @@ class Gato {
     }
 }
 
+const listaMichis = [];
+
 const michi = new Gato('Michi', '3kg', 'naranja', '30cm');
 const bolaDeNieve = new Gato('Bola de Nieve', '5kg', 'blanco', '40cm');
 bolaDeNieve.peso = '4kg';
@@ -26,6 +28,19 @@ nombreGato.innerHTML = michi.nombre;
 colorGato.innerHTML = michi.color;
 alturaGato.innerHTML = michi.altura;
 
+const actualizarLista = (lista) => {
+    lista.forEach(michi => {
+        listaMichis.push(
+            new Gato(
+                michi.nombre,
+                michi.peso,
+                michi.color,
+                michi.altura
+            )
+        )
+    });
+}
+
 const query = new XMLHttpRequest();
 query.open('GET', '/michis.json', true);
 query.send();
@@ -35,7 +50,9 @@ query.onreadystatechange = function () {
         if(query.status == 200) {
             console.log("llegó");
             const respuesta = JSON.parse(query.responseText);
-            console.log(respuesta);
+            actualizarLista(respuesta.lista);
+
+            console.log(listaMichis)
         } else if(query.status == 404){
             console.error("Recurso no encontrado");
         } else {
