@@ -59,4 +59,15 @@ const actualizarDatosConAjax = () => {
     }
 }
 
-actualizarDatosConAjax();
+const actualizarDatosConFetch = () => {
+    fetch('/michis.json')
+    .then(respuesta => respuesta.json())
+    .then(respuesta => {
+        actualizarLista(respuesta.lista);
+        actualizarVista();
+    })
+}
+
+//actualizarDatosConAjax();
+
+actualizarDatosConFetch();
