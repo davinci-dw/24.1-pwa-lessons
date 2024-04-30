@@ -1,8 +1,14 @@
 
-self.addEventListener('install', () => {
-    console.log("Soy un service worker. Y me estoy instalando.");
-    console.log("se instaló todo");
-    self.skipWaiting();
+self.addEventListener('install', (e) => {
+    console.log("Instalando...");
+    e.waitUntil(
+        caches.open('caches').then(cache => {
+            cache.addAll([
+                'michis.json',
+                'scripts.js'
+            ]);
+        })
+    );
 })
 
 self.addEventListener('activate', () => {
