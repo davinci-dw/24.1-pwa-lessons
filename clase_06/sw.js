@@ -1,11 +1,11 @@
+const ALMACEN = 'caches';
 
 self.addEventListener('install', (e) => {
     console.log("Instalando...");
     e.waitUntil(
-        caches.has('caches').then(estaInstalado => {
+        caches.has(ALMACEN).then(estaInstalado => {
             if(!estaInstalado) {
-                console.log("esta instalando")
-                return caches.open('caches').then(cache => {
+                return caches.open(ALMACEN).then(cache => {
                     cache.addAll([
                         'michis.json',
                         'scripts.js'
