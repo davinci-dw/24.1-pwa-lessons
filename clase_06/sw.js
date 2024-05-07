@@ -1,4 +1,10 @@
 const ALMACEN = 'caches';
+const LISTA_ARCHIVOS_CACHEADOS = [
+    '/',
+    'michis.json',
+    'styles.css',
+    'scripts.js'
+]
 
 self.addEventListener('install', (e) => {
     console.log("Instalando...");
@@ -6,10 +12,7 @@ self.addEventListener('install', (e) => {
         caches.has(ALMACEN).then(estaInstalado => {
             if(!estaInstalado) {
                 return caches.open(ALMACEN).then(cache => {
-                    cache.addAll([
-                        'michis.json',
-                        'scripts.js'
-                    ]);
+                    cache.addAll(LISTA_ARCHIVOS_CACHEADOS);
                 })        
             }
         })
