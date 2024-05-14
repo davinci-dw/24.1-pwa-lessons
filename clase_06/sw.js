@@ -4,7 +4,8 @@ const LISTA_ARCHIVOS_CACHEADOS = [
     'styles.css',
     'offline.jpg',
     'scripts.js',
-    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css',
     '/'
 ]
 

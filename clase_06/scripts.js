@@ -28,13 +28,20 @@ const actualizarVista = () => {
     const contenedor = document.getElementById('gatos');
     listaMichis.forEach(michi => {
         contenedor.innerHTML += `
-        <article style="border: 1px solid #000">
-            <h1 style="color: red;font-size: 2rem;">${michi.nombre}</h1>
-            <h2>peso: ${michi.peso}</h2>
-            <h3>altura: ${michi.altura}</h3>
-            <h4>color: ${michi.color}</h4>
-            <img src="${michi.foto}" alt="foto de michi" />
-        </article>
+        <div class="card">
+            <div class="card-image">
+            <img src="${michi.foto}">
+            <span class="card-title">${michi.nombre}</span>
+            </div>
+            <div class="card-content">
+                <p>peso: ${michi.peso}</p>
+                <p>altura: ${michi.altura}</p>
+                <p>color: ${michi.color}</p>
+            </div>
+            <div class="card-action">
+            <a href="#">This is a link</a>
+            </div>
+        </div>
         `;
     })
 }
