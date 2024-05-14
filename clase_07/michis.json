@@ -1,0 +1,19 @@
+{
+    "titulo": "Mis michis",
+    "lista": [
+        {
+            "nombre": "Michi",
+            "peso": "3kg",
+            "color": "naranja",
+            "altura": "30cm",
+            "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOOlkQaENYaIrFPLTv_HFxYUDTqERmzg1tIlSFSyItQw&s"
+        }, 
+        {
+            "nombre": "Bola de Nieve",
+            "peso": "5kg",
+            "color": "blanco",
+            "altura": "40cm",
+            "foto": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVNPCIKHfEaMvrGhBTnffD3Jmd8gkkL3RcHAI887L2pA&s"
+        }
+    ]
+}
