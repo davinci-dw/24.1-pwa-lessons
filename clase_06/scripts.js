@@ -1,9 +1,10 @@
 class Gato {
-    constructor(nombre, peso, color, altura) {
+    constructor(nombre, peso, color, altura, foto) {
         this.nombre = nombre
         this.peso = peso
         this.color = color
         this.altura = altura
+        this.foto = foto
     }
 }
 
@@ -16,7 +17,8 @@ const actualizarLista = (lista) => {
                 michi.nombre,
                 michi.peso,
                 michi.color,
-                michi.altura
+                michi.altura,
+                michi.foto
             )
         )
     });
@@ -31,6 +33,7 @@ const actualizarVista = () => {
             <h2>peso: ${michi.peso}</h2>
             <h3>altura: ${michi.altura}</h3>
             <h4>color: ${michi.color}</h4>
+            <img src="${michi.foto}" alt="foto de michi" />
         </article>
         `;
     })
