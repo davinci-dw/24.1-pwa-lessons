@@ -5,6 +5,13 @@ const dbVersion = db.version(1).stores({
     logs: "++id, date"
 });
 
+const mostrarLista = (logs) => {
+    const lista = document.getElementById('lista');
+    logs.forEach(log => {
+        lista.innerHTML += `<li>${new Date(log.date).toISOString()}</li>`
+    });
+}
+
 db.logs
     .add({
         date: new Date().getTime()
@@ -15,6 +22,6 @@ db.logs
             .toArray()
     )
     .then((logs) => {
-        console.log("logs:", logs)
+        mostrarLista(logs)
     })
     
